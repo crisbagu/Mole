@@ -165,9 +165,9 @@ func (m model) View() string {
 		}
 		if len(m.largeFiles) == 0 {
 			if m.largeFilter != "" {
-				fmt.Fprintf(&b, "  No matches for %q\n", m.largeFilter)
+				fmt.Fprintf(&b, "  %sNo matches for %q%s\n", colorGray, m.largeFilter, colorReset)
 			} else {
-				fmt.Fprintln(&b, "  No large files found")
+				fmt.Fprintf(&b, "  %sNo large files found%s\n", colorGray, colorReset)
 			}
 		} else {
 			viewport := calculateViewport(m.height, true)
@@ -218,9 +218,9 @@ func (m model) View() string {
 		}
 		if len(m.entries) == 0 {
 			if !m.inOverviewMode() && m.entryFilter != "" {
-				fmt.Fprintf(&b, "  No matches for %q\n", m.entryFilter)
+				fmt.Fprintf(&b, "  %sNo matches for %q%s\n", colorGray, m.entryFilter, colorReset)
 			} else {
-				fmt.Fprintln(&b, "  Empty directory")
+				fmt.Fprintf(&b, "  %sEmpty directory%s\n", colorGray, colorReset)
 			}
 		} else {
 			if m.inOverviewMode() {

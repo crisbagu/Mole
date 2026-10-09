@@ -1,0 +1,3 @@
+## 2026-10-09 - Added visual hierarchy to analyze TUI empty states
+**Learning:** Terminal UI empty states in Mole (e.g., 'Empty directory', 'No matches for [filter]') previously blended in visually with normal file entries because they used the default terminal text color. Making these informational states recede visually by applying gray coloring significantly improves the visual hierarchy and clarity of the TUI, clearly distinguishing them from actionable file data. This is a solid, reusable UX pattern for terminal applications.
+**Action:** Always consider color and visual weight for empty states in TUI components, ensuring they do not visually compete with actual content.
